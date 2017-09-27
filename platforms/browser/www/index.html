@@ -34,7 +34,7 @@
 </head>
 
 <body>
-    <div id="qa-ad-banner"></div>
+    <div id="qa-ad-banner" class="banner-ad__horiz">INSERT ADD</div>
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
@@ -55,7 +55,7 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Awesome App</div>
+                    <div class="center sliding">Golf Scorecard</div>
                     <div class="right">
                         <!--
                           Right link contains only icon - additional "icon-only" class
@@ -71,10 +71,25 @@
                 <div data-page="index" class="page">
                     <!-- Scrollable page content -->
                     <div class="page-content">
-                        <div class="content-block">
-                            <p>Page content goes here</p>
+                        <!--<div class="content-block">-->
+                        <div class="">
+                            <!--<p>Page content goes here</p>
                             <!-- Link to another page -->
-                            <a href="about.html">About app</a>
+                            <!--<a href="about.html">About app</a>-->
+                            <div id="scorecard">
+                                <div id="leaderboard">
+                                    <div id="lb-hole-row" class="lb-row lb-hole-row">
+                                        <span class="lb-hole-col">Hole</span><span class="lb-hole-col">1</span><span class="lb-hole-col">2</span><span class="lb-hole-col">3</span>
+                                    </div>
+                                    <div id="lb-p1-row" class="lb-row lb-player-row--odd">
+                                        <span>Play1</span>
+                                    </div>
+                                    <div id="lb-p2-row" class="lb-row lb-player-row--even">
+                                        <span>Play2</span>
+                                    </div>
+                                </div>
+                                <div id="hole-card"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

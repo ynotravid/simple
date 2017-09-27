@@ -9,7 +9,28 @@
 
    See https://github.com/apache/cordova-plugin-statusbar
 */
+.banner-ad__horiz {
+    height: 50px;
+    background-color: rebeccapurple;
+}
 
 .statusbar-overlay {
     background: #000000;
 }
+
+.lb-row {
+    height: 2em;
+}
+.lb-hole-row {
+  background-color: #33691e;
+}
+.lb-hole-col {
+}
+
+.lb-player-row--odd {
+  background-color: #ffffff;
+}
+.lb-player-row--even {
+  background-color: #629749;
+}
+
