@@ -34,6 +34,9 @@
 }
 .lb-hole-col {
 }
+.lb-hole-row {
+    color: white;
+}
 
 .lb-player-row--odd {
   /*background-color: #ffffff;*/
