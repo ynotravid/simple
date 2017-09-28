@@ -71,18 +71,18 @@
   height: 100px;
   width: 100%;
   background-color: #fff8e1;
-  border: 1px solid purple;
+  /*border: 1px solid purple;*/
 }
 .lb-layer-select-indicator {
   position: absolute;
   height: 100px;
   width: 100%;
-  border: 1px dashed green;
+  /*border: 1px dashed green;*/
 
 }
 .lb-layer-labels {
   position: absolute;
   height: 100px;
   width: 100%;
-  border: 1px dashed blue;
+  /*border: 1px dashed blue;*/
 }
