@@ -12,25 +12,77 @@
 .banner-ad__horiz {
     height: 50px;
     background-color: rebeccapurple;
+    border: 1px solid black;
 }
 
 .statusbar-overlay {
     background: #000000;
 }
 
+
+
+
 .lb-row {
     height: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-.lb-hole-row {
+.lb-hole-row-background {
   background-color: #33691e;
+  color: white;
 }
 .lb-hole-col {
 }
 
 .lb-player-row--odd {
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
 }
 .lb-player-row--even {
-  background-color: #629749;
+  /*background-color: #629749;*/
 }
 
+.lb-hole-col--label {
+    width: 6em;
+    margin-left: 1em;
+}
+.lb-hole-col {
+    flex: 1 0 0;
+}
+
+
+
+
+
+
+.lb-selection-indicator {
+    height: 100%;
+    width: 30px;
+    left: 50%;
+    position: absolute;
+    background-color: #c4c4c4;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 1px 0px 1px;
+}
+
+.lb-layer-background {
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  background-color: #fff8e1;
+  border: 1px solid purple;
+}
+.lb-layer-select-indicator {
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  border: 1px dashed green;
+
+}
+.lb-layer-labels {
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  border: 1px dashed blue;
+}
