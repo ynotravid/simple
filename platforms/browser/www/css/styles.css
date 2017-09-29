@@ -9,6 +9,11 @@
 
    See https://github.com/apache/cordova-plugin-statusbar
 */
+@font-face {
+    font-family: Supercell-Magic;
+    src: url(../fonts/supercell-magic-webfont.ttf);
+}
+
 .banner-ad__horiz {
     height: 50px;
     background-color: rebeccapurple;
@@ -17,6 +22,11 @@
 
 .statusbar-overlay {
     background: #000000;
+}
+
+#leaderboard {
+    height: 100px;
+    width: 100%;
 }
 
 
@@ -31,27 +41,35 @@
 .lb-hole-row-background {
   background-color: #33691e;
   color: white;
+  font-family: Supercell-Magic;
+}
+.lb-hole-col--label {
+  width: 6em;
+  margin-left: 1em;
+  font-family: Supercell-Magic;
+  text-shadow: 2px 2px #000000;
 }
 .lb-hole-col {
+  font-family: Supercell-Magic;
+  text-shadow: 2px 2px #000000;
+  flex: 1 0 0;
 }
 .lb-hole-row {
     color: white;
 }
 
-.lb-player-row--odd {
-  /*background-color: #ffffff;*/
+.lb-player-col--label {
+  font-family: Supercell-Magic;
+  width: 6em;
+  margin-left: 1em;
 }
-.lb-player-row--even {
-  /*background-color: #629749;*/
+.lb-player-col {
+  font-family: Supercell-Magic;
+  flex: 1 0 0;
 }
 
-.lb-hole-col--label {
-    width: 6em;
-    margin-left: 1em;
-}
-.lb-hole-col {
-    flex: 1 0 0;
-}
+
+
 
 
 
@@ -61,7 +79,7 @@
 .lb-selection-indicator {
     height: 100%;
     width: 30px;
-    left: 50%;
+    left: 53%;
     position: absolute;
     background-color: #c4c4c4;
     border-style: solid;
