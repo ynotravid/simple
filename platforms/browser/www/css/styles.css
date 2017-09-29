@@ -107,3 +107,40 @@
   width: 100%;
   /*border: 1px dashed blue;*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.se-player-card {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.se-pc-name {
+    flex: 1 0 0;
+}
+.se-pc-score-box {
+    flex: 1 0 0;
+
+}
+.se-pc-score-pad {
+    flex: 2 0 0;
+
+}
+
+.se-pc-sp-number {
+
+}
+
+
+
+
