@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="utf-8">
     <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
@@ -10,166 +11,102 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'  'unsafe-inline' http://lorempixel.com data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' *.googleapis.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com; media-src *; connect-src 'self' 'unsafe-inline' ws://*:3000;">
 
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="theme-color" content="#ccc5af">
 
-    <!-- Your app title -->
-    <title>My App</title>
+    <title>Golf Scorecard</title>
 
-    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
-        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
-     -->
-
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
-
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.css">
+    <link rel="stylesheet" href="css/golf-theme.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/material-icons.css">
     <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-    <div id="qa-ad-banner" class="banner-ad__horiz">INSERT ADD</div>
-    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <link rel="icon" href="img/icon.png">
+  </head>
+  <body class="theme-golf">
     <div class="statusbar-overlay"></div>
-
-    <!-- Panels overlay-->
     <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-            <p>Left panel content goes here</p>
-        </div>
-    </div>
-
-    <!-- Views -->
-    <div class="views">
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Top Navbar-->
+    <div class="panel panel-left panel-cover">
+      <div class="view navbar-fixed">
+        <div class="pages">
+          <div data-page="panel-left" class="page">
             <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Golf Scorecard</div>
-                    <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
+              <div class="navbar-inner">
+                <div class="center">Options and Such</div>
+              </div>
             </div>
-            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
-                <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
-                    <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <!--<div class="content-block">-->
-                        <div class="">
-                            <!--<p>Page content goes here</p>
-                            <!-- Link to another page -->
-                            <!--<a href="about.html">About app</a>-->
-                            <div id="scorecard">
-                                <div id="leaderboard">
-                                    <div class="lb-layer-background">
-                                        <div class="lb-row lb-hole-row-background"></div>
-                                    </div>
-                                    <div class="lb-layer-select-indicator">
-                                        <div id="qa-lb-selection-indicator" class="lb-selection-indicator"></div>
-                                    </div>
-                                    <div class="lb-layer-labels">
-                                        <div class="lb-row lb-hole-row">
-                                            <span class="lb-hole-col--label">Hole</span>
-                                            <span class="lb-hole-col">1</span>
-                                            <span class="lb-hole-col">2</span>
-                                            <span class="lb-hole-col">3</span>
-                                            <span class="lb-hole-col">4</span>
-                                            <span class="lb-hole-col">5</span>
-                                            <span class="lb-hole-col">6</span>
-                                            <span class="lb-hole-col">7</span>
-                                            <span class="lb-hole-col">8</span>
-                                            <span class="lb-hole-col">9</span>
-                                            <span class="lb-hole-col">IN</span>
-                                        </div>
-                                        <div class="lb-row lb-player-row">
-                                            <span class="lb-player-col--label">Play1</span>
-                                            <span class="lb-player-col">4</span>
-                                            <span class="lb-player-col">3</span>
-                                            <span class="lb-player-col">3</span>
-                                            <span class="lb-player-col">4</span>
-                                            <span class="lb-player-col">5</span>
-                                            <span class="lb-player-col">6</span>
-                                            <span class="lb-player-col">3</span>
-                                            <span class="lb-player-col">4</span>
-                                            <span class="lb-player-col">4</span>
-                                            <span class="lb-player-col">28</span>
-                                        </div>
-                                        <div class="lb-row lb-player-row">
-                                            <span class="lb-player-col--label">Plyr2</span>
-                                            <span class="lb-player-col">4</span>
-                                            <span class="lb-player-col">3</span>
-                                            <span class="lb-player-col">3</span>
-                                            <span class="lb-player-col">4</span>
-                                            <span class="lb-player-col">5</span>
-                                            <span class="lb-player-col">6</span>
-                                            <span class="lb-player-col">3</span>
-                                            <span class="lb-player-col">4</span>
-                                            <span class="lb-player-col">4</span>
-                                            <span class="lb-player-col">28</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="hole-card"></div>
-                            </div>
-
-                            <div class="score-entry-container">
-                                <div class="se-player-card">
-                                    <span class="se-pc-name">Play1</span>
-                                    <span class="se-pc-score-box">5</span>
-                                    <span class="se-pc-score-pad">
-                                        <span class="se-pc-sp-number">1</span>
-                                        <span class="se-pc-sp-number">2</span>
-                                        <span class="se-pc-sp-number">3</span>
-                                        <span class="se-pc-sp-number">4</span>
-                                        <span class="se-pc-sp-number">5</span>
-                                        <span class="se-pc-sp-number">6</span>
-                                        <span class="se-pc-sp-number">7</span>
-                                        <span class="se-pc-sp-number">8</span>
-                                        <span class="se-pc-sp-number">9</span>
-                                        <span class="se-pc-sp-number">10</span>
-                                        <span class="se-pc-sp-number">10+</span>
-                                    </span>
-
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                </div>
+            <div class="page-content">
+              <div class="content-block">
+                <p><b>TODO:</b> navigation and quick options.  Also maybe <a href="#" class="close-panel">close me</a> btn.</p>
+              </div>
+              <div class="content-block-title">Lorem Ipsum</div>
+              <div class="content-block">
+                <p>Long text block goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sem urna, gravida non scelerisque id, fringilla ac velit. Phasellus elementum a ipsum at ornare. Mauris sagittis rhoncus euismod. Integer convallis augue eu lacus ultrices, in dictum elit consequat. Nulla faucibus massa id felis egestas eleifend. Proin consequat dignissim magna ut scelerisque. Vestibulum ac lorem semper, posuere sapien nec, pharetra massa. Nulla a tellus facilisis, sollicitudin quam porta, aliquam lorem. Fusce dignissim eros ac diam molestie, ut ultrices lorem tristique. Ut facilisis augue ac nisi egestas malesuada. Nunc posuere tortor quis eleifend mollis. Aliquam erat volutpat. Donec feugiat elit tellus, nec convallis orci elementum in. Sed urna mi, vestibulum id tempus id, pretium et ante. Pellentesque eget sollicitudin ligula. Phasellus pellentesque velit eu porta suscipit.</p>
+              </div>
             </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
+    </div>
+    <!--<div class="panel panel-right panel-reveal">
+      <div class="view view-right">
+        <div class="pages navbar-fixed">
+          <div data-page="panel-right1" class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">Right Panel</div>
+              </div>
+            </div>
+            <div class="page-content">
+              <div class="content-block">
+                <p>This is a right side panel. You can close it by clicking outsite or on this link:<a href="#" class="close-panel">close me</a>. You can put here anything, even another isolated view, try it:</p>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="panel-right2.html" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Right panel page 2</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="panel-right3.html" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Right panel page 3</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <div class="views">
+      <div class="view view-main">
+        <div class="pages navbar-fixed">
+          <!--<div class="page" data-page="scorecard">-->
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">Golf Scorecard</div>
+                <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
+              </div>
+            </div>
+            <!--<div class="page-content">
+
+            </div>-->
+          <!--</div>-->
+        </div>
+      </div>
     </div>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
-</body>
-
+    <script type="text/javascript" src="lib/framework7/js/framework7.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
 </html>
