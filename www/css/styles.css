@@ -124,6 +124,7 @@
     display: flex;
     align-items: center;
     margin: 10px;
+    background-color: #c4c4c4;
 }
 
 .se-pc-name {
@@ -170,8 +171,7 @@
  margin: 4px;
  /*padding: 2px;*/
  text-align: center;
+ background: white;
 }
-
-
 
 
